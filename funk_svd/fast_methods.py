@@ -41,9 +41,9 @@ def _initialization(n_users, n_items, n_factors):
     qi : numpy.array
         Item latent factors matrix.
     """
-    bu = np.zeros(n_users)
-    bi = np.zeros(n_items)
-
+    bu = np.zeros(int(n_users))
+    bi = np.zeros(int(n_items))
+    
     pu = np.random.normal(0, .1, (n_users, n_factors))
     qi = np.random.normal(0, .1, (n_items, n_factors))
 
