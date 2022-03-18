@@ -1,6 +1,5 @@
 import numpy as np
 from numba import njit
-from numba import float64
 
 __all__ = [
     '_compute_val_metrics',
@@ -40,22 +39,12 @@ def _initialization(n_users, n_items, n_factors):
     qi : numpy.array
         Item latent factors matrix.
     """
-    bu = np.empty(n_users)
-    bi = np.empty(n_items)
+    bu = np.zeros(n_users)
+    bi = np.zeros(n_items)
     
-    pu = np.empty((n_users, n_factors))
-    qi = np.empty((n_items, n_factors))
-    
-    for i in range(n_users):
-        bu[i] = float64(0)
-        for j in range(n_factors):
-            pu[i][j] = float64(0)
-    
-    for i in range(n_items):
-        bu[i] = float64(0)
-        for j in range(n_factors):
-            pu[i][j] = float64(0)
-      
+    pu = np.zeros((n_users, n_factors))
+    qi = np.zeros((n_items, n_factors))
+         
     return bu, bi, pu, qi
 
 
