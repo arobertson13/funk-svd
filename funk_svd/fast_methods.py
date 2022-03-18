@@ -1,6 +1,6 @@
 import numpy as np
 from numba import njit
-
+from numba import float64
 
 __all__ = [
     '_compute_val_metrics',
@@ -47,14 +47,14 @@ def _initialization(n_users, n_items, n_factors):
     qi = np.empty((n_items, n_factors))
     
     for i in range(n_users):
-        bu[i] = 0
+        bu[i] = float64(0)
         for j in range(n_factors):
-            pu[i][j] = 0
+            pu[i][j] = float64(0)
     
     for i in range(n_items):
-        bu[i] = 0
+        bu[i] = float64(0)
         for j in range(n_factors):
-            pu[i][j] = 0
+            pu[i][j] = float64(0)
       
     return bu, bi, pu, qi
 
