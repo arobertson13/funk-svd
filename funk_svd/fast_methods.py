@@ -46,14 +46,14 @@ def _initialization(n_users, n_items, n_factors):
     pu = np.empty((n_users, n_factors))
     qi = np.empty((n_items, n_factors))
     
-    for i in range(len(n_users)):
+    for i in range(n_users):
         bu[i] = 0
-        for j in range(len(n_factors)):
+        for j in range(n_factors):
             pu[i][j] = 0
     
-    for i in range(len(n_items)):
+    for i in range(n_items):
         bu[i] = 0
-        for j in range(len(n_factors)):
+        for j in range(n_factors):
             pu[i][j] = 0
       
     return bu, bi, pu, qi
