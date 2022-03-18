@@ -1,5 +1,5 @@
 import numpy as np
-from numba import njit, float64
+from numba import njit
 
 
 __all__ = [
@@ -40,8 +40,8 @@ def _initialization(n_users, n_items, n_factors):
     qi : numpy.array
         Item latent factors matrix.
     """
-    bu = np.zeros(n_users, dtype=float64)
-    bi = np.zeros(n_items, dtype=float64)
+    bu = np.zeros(n_users, dtype=float)
+    bi = np.zeros(n_items, dtype=float)
     
     pu = np.random.normal(0.0, .1, (n_users, n_factors))
     qi = np.random.normal(0.0, .1, (n_items, n_factors))
