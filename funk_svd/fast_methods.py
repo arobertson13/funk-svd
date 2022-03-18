@@ -44,8 +44,8 @@ def _initialization(n_users, n_items, n_factors):
     bu = np.zeros(int(n_users))
     bi = np.zeros(int(n_items))
     
-    pu = np.random.normal(0, .1, (n_users, n_factors))
-    qi = np.random.normal(0, .1, (n_items, n_factors))
+    pu = np.random.normal(0, .1, (int(n_users), int(n_factors)))
+    qi = np.random.normal(0, .1, (int(n_items), int(n_factors)))
 
     return bu, bi, pu, qi
 
