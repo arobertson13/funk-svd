@@ -43,8 +43,8 @@ def _initialization(n_users, n_items, n_factors):
     bu = np.zeros(n_users)
     bi = np.zeros(n_items)
     
-    pu = np.random.random((n_users, n_factors))
-    qi = np.random.random((n_items, n_factors))
+    pu = np.zeros((n_users, n_factors))
+    qi = np.zeros((n_items, n_factors))
     
     
 
