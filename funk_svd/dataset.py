@@ -123,3 +123,14 @@ def _ml_ratings_csv_to_df(csv_path, variant):
     df.reset_index(drop=True, inplace=True)
 
     return df
+
+def _ml_ratings_csv_to_df(csv_path, variant):
+    names = ['u_id', 'i_id', 'rating']
+    dtype = {'u_id': np.uint32, 'i_id': np.uint32, 'rating': np.float64}
+
+    df = pd.read_csv(csv_path, names=names, dtype=dtype, header=0,
+                     sep='\t')
+
+    df.reset_index(drop=True, inplace=True)
+
+    return df
