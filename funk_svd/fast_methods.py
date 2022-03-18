@@ -40,11 +40,11 @@ def _initialization(n_users, n_items, n_factors):
     qi : numpy.array
         Item latent factors matrix.
     """
-    bu = np.zeros(n_users, dtype=int)
-    bi = np.zeros(n_items, dtype=int)
+    bu = np.zeros(n_users)
+    bi = np.zeros(n_items)
     
-    pu = np.zeros((n_users, n_factors), dtype=int)
-    qi = np.zeros((n_items, n_factors), dtype=int)
+    pu = np.zeros((n_users, n_factors))
+    qi = np.zeros((n_items, n_factors))
     
     
 
