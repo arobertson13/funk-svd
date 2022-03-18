@@ -113,15 +113,11 @@ def _get_data_dir_path(data_dir_path=None):
 
 
 def _ml_ratings_csv_to_df(csv_path, variant):
-    names = ['u_id', 'i_id', 'rating', 'timestamp']
-    dtype = {'u_id': np.uint32, 'i_id': np.uint32, 'rating': np.float64}
-
-    def date_parser(time):
-        return 1
+    names = ['u_id', 'i_id', 'rating']
+    dtype = {'u_id': np.uint32, 'i_id': np.uint32, 'rating': np.ufloat64}
 
     df = pd.read_csv(csv_path, names=names, dtype=dtype, header=0,
-                     sep=VARIANTS[variant]['sep'], parse_dates=['timestamp'],
-                     date_parser=date_parser, engine='python')
+                     sep=VARIANTS[variant]['sep'], engine='python')
 
     
     df.reset_index(drop=True, inplace=True)
