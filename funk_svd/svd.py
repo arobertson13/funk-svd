@@ -163,6 +163,7 @@ class SVD:
         n_items = len(np.unique(X[:, 1]))
 
         bu, bi, pu, qi = _initialization(n_users, n_items, self.n_factors)
+        #checkpoint
 
         # Run SGD
         for epoch_ix in range(self.n_epochs):
