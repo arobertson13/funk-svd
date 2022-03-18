@@ -1,6 +1,5 @@
 import numpy as np
 from numba import njit
-from numba import float64
 
 
 __all__ = [
@@ -41,11 +40,11 @@ def _initialization(n_users, n_items, n_factors):
     qi : numpy.array
         Item latent factors matrix.
     """
-    bu = np.zeros(n_users, dtype=float64)
-    bi = np.zeros(n_items, dtype=float64)
+    bu = np.zeros(n_users, dtype=np.float64)
+    bi = np.zeros(n_items, dtype=np.float64)
     
-    pu = np.zeros((n_users, n_factors), dtype=float64)
-    qi = np.zeros((n_items, n_factors), dtype=float64)
+    pu = np.zeros((n_users, n_factors), dtype=np.float64)
+    qi = np.zeros((n_items, n_factors), dtype=np.float64)
     
     
 
